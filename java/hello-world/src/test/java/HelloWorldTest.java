@@ -3,8 +3,7 @@ import org.junit.Ignore;
 
 import static org.junit.Assert.assertEquals;
 
-public class HelloWorldTest {
-
+public final class HelloWorldTest {
 
     @Test
     public void helloNoName() {
@@ -13,19 +12,16 @@ public class HelloWorldTest {
     }
 
     @Test
-    @Ignore
     public void emptyStringIsComparedByValue() {
         assertEquals("Hello, World!", HelloWorld.hello(new String("")));
     }
     
     @Test
-    @Ignore
     public void helloSampleName() {
         assertEquals("Hello, Alice!", HelloWorld.hello("Alice"));
     }
 
     @Test
-    @Ignore
     public void helloAnotherSampleName() {
         assertEquals("Hello, Bob!", HelloWorld.hello("Bob"));
     }
