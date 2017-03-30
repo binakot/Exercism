@@ -14,7 +14,7 @@ final class PangramChecker {
         final byte[] chars = input.toLowerCase().getBytes(StandardCharsets.US_ASCII);
         final Set<Byte> charSet = new HashSet<>(0);
         for (final byte ch : chars) {
-            if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+            if (ch >= 'a' && ch <= 'z') {
                 charSet.add(ch);
             }
         }
