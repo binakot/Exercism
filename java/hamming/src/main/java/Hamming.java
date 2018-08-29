@@ -2,22 +2,22 @@ import java.util.stream.IntStream;
 
 class Hamming {
 
-    private final String sequence1;
-    private final String sequence2;
+    private final String leftStrand;
+    private final String rightStrand;
 
-    Hamming(final String sequence1, final String sequence2) {
-        if (sequence1.length() != sequence2.length()) {
+    Hamming(final String leftStrand, final String rightStrand) {
+        if (leftStrand.length() != rightStrand.length()) {
             throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
         }
 
-        this.sequence1 = sequence1;
-        this.sequence2 = sequence2;
+        this.leftStrand = leftStrand;
+        this.rightStrand = rightStrand;
     }
 
     int getHammingDistance() {
         return IntStream
-                .range(0, sequence1.length())
-                .map(i -> sequence1.charAt(i) != sequence2.charAt(i) ? 1 : 0)
+                .range(0, leftStrand.length())
+                .map(i -> leftStrand.charAt(i) != rightStrand.charAt(i) ? 1 : 0)
                 .sum();
     }
 }
